@@ -188,14 +188,14 @@ class TextTestRunner(object):
 
         infos = []
         if not result.wasSuccessful():
-            self.stream.write("FAILED")
+            result.write(result.FAIL, "FAILED")
             failed, errored = map(len, (result.failures, result.errors))
             if failed:
                 infos.append("failures=%d" % failed)
             if errored:
                 infos.append("errors=%d" % errored)
         else:
-            self.stream.write("OK")
+            result.write(result.OKGREEN, "OK")
         if skipped:
             infos.append("skipped=%d" % skipped)
         if expectedFails:
