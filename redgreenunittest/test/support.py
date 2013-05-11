@@ -1,4 +1,4 @@
-import unittest
+import redgreenunittest
 
 
 class TestHashing(object):
@@ -42,7 +42,7 @@ class TestEquality(object):
             self.assertNotEqual(obj_2, obj_1)
 
 
-class LoggingResult(unittest.TestResult):
+class LoggingResult(redgreenunittest.TestResult):
     def __init__(self, log):
         self._events = log
         super(LoggingResult, self).__init__()

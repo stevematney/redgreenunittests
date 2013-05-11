@@ -1,4 +1,4 @@
-import unittest
+import redgreenunittest as unittest
 
 import sys
 from .support import LoggingResult, TestEquality

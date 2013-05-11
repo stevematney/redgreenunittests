@@ -2,7 +2,7 @@
 
 import sys
 if sys.argv[0].endswith("__main__.py"):
-    sys.argv[0] = "python -m unittest"
+    sys.argv[0] = "python -m redgreenunittest"
 
 __unittest = True
 

@@ -7,7 +7,7 @@ import weakref
 from cStringIO import StringIO
 
 
-import unittest
+import redgreenunittest as unittest
 
 
 @unittest.skipUnless(hasattr(os, 'kill'), "Test requires os.kill")

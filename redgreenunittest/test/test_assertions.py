@@ -1,9 +1,9 @@
 import datetime
 
-import unittest
+import redgreenunittest
 
 
-class Test_Assertions(unittest.TestCase):
+class Test_Assertions(redgreenunittest.TestCase):
     def test_AlmostEqual(self):
         self.assertAlmostEqual(1.00000001, 1.0)
         self.assertNotAlmostEqual(1.0000001, 1.0)
@@ -102,20 +102,20 @@ class Test_Assertions(unittest.TestCase):
             self.fail('assertNotRegexpMatches should have failed.')
 
 
-class TestLongMessage(unittest.TestCase):
+class TestLongMessage(redgreenunittest.TestCase):
     """Test that the individual asserts honour longMessage.
     This actually tests all the message behaviour for
     asserts that use longMessage."""
 
     def setUp(self):
-        class TestableTestFalse(unittest.TestCase):
+        class TestableTestFalse(redgreenunittest.TestCase):
             longMessage = False
             failureException = self.failureException
 
             def testTest(self):
                 pass
 
-        class TestableTestTrue(unittest.TestCase):
+        class TestableTestTrue(redgreenunittest.TestCase):
             longMessage = True
             failureException = self.failureException
 
@@ -126,7 +126,7 @@ class TestLongMessage(unittest.TestCase):
         self.testableFalse = TestableTestFalse('testTest')
 
     def testDefault(self):
-        self.assertFalse(unittest.TestCase.longMessage)
+        self.assertFalse(redgreenunittest.TestCase.longMessage)
 
     def test_formatMsg(self):
         self.assertEqual(self.testableFalse._formatMessage(None, "foo"), "foo")
@@ -283,4 +283,4 @@ class TestLongMessage(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    redgreenunittest.main()

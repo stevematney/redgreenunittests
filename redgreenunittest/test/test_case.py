@@ -6,7 +6,7 @@ import sys
 from copy import deepcopy
 from test import test_support
 
-import unittest
+import redgreenunittest as unittest
 
 from .support import (
     TestEquality, TestHashing, LoggingResult, ResultWithNoStartTestRunStopTestRun

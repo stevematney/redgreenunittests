@@ -1,16 +1,16 @@
 import os
 import sys
-import unittest
+import redgreenunittest
 
 
 here = os.path.dirname(__file__)
-loader = unittest.defaultTestLoader
+loader = redgreenunittest.defaultTestLoader
 
 def suite():
-    suite = unittest.TestSuite()
+    suite = redgreenunittest.TestSuite()
     for fn in os.listdir(here):
         if fn.startswith("test") and fn.endswith(".py"):
-            modname = "unittest.test." + fn[:-3]
+            modname = "redgreenunittest.test." + fn[:-3]
             __import__(modname)
             module = sys.modules[modname]
             suite.addTest(loader.loadTestsFromModule(module))
@@ -18,4 +18,4 @@ def suite():
 
 
 if __name__ == "__main__":
-    unittest.main(defaultTest="suite")
+    redgreenunittest.main(defaultTest="suite")

@@ -1013,7 +1013,7 @@ class FunctionTestCase(TestCase):
     """A test case that wraps a test function.
 
     This is useful for slipping pre-existing test functions into the
-    unittest framework. Optionally, set-up and tidy-up functions can be
+    redgreenunittest framework. Optionally, set-up and tidy-up functions can be
     supplied. As with TestCase, the tidy-up ('tearDown') function will
     always be called if the set-up ('setUp') function ran successfully.
     """

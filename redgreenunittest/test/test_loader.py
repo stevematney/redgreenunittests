@@ -2,7 +2,7 @@ import sys
 import types
 
 
-import unittest
+import redgreenunittest as unittest
 
 
 class Test_TestLoader(unittest.TestCase):

@@ -2,7 +2,7 @@ from cStringIO import StringIO
 
 import os
 import sys
-import unittest
+import redgreenunittest as unittest
 
 
 class Test_TestProgram(unittest.TestCase):

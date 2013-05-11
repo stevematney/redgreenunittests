@@ -1,4 +1,4 @@
-import unittest
+import redgreenunittest as unittest
 
 from .support import LoggingResult
 

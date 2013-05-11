@@ -2,7 +2,7 @@ import os
 import re
 import sys
 
-import unittest
+import redgreenunittest as unittest
 
 
 class TestDiscovery(unittest.TestCase):

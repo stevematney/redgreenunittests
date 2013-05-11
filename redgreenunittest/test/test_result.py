@@ -4,7 +4,7 @@ from StringIO import StringIO
 from test import test_support
 
 import traceback
-import unittest
+import redgreenunittest as unittest
 
 
 class Test_TestResult(unittest.TestCase):

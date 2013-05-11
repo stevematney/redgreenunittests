@@ -1,4 +1,4 @@
-"""Unittest main program"""
+"""Redgreenunittest main program"""
 
 import sys
 import os
@@ -142,7 +142,7 @@ class TestProgram(object):
             elif len(args) > 0:
                 self.testNames = args
                 if __name__ == '__main__':
-                    # to support python -m unittest ...
+                    # to support python -m redgreenunittest ...
                     self.module = None
             else:
                 self.testNames = (self.defaultTest,)

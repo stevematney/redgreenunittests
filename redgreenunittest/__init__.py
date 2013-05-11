@@ -9,9 +9,9 @@ text-based utility class for running the tests and reporting the results
 
 Simple usage:
 
-    import unittest
+    import redgreenunittest
 
-    class IntegerArithmenticTestCase(unittest.TestCase):
+    class IntegerArithmenticTestCase(redgreenunittest.TestCase):
         def testAdd(self):  ## test method names begin 'test*'
             self.assertEqual((1 + 2), 3)
             self.assertEqual(0 + 1, 1)
@@ -20,7 +20,7 @@ Simple usage:
             self.assertEqual((5 * 8), 40)
 
     if __name__ == '__main__':
-        unittest.main()
+        redgreenunittest.main()
 
 Further information is available in the bundled documentation, and from
 

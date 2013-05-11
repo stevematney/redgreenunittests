@@ -2,7 +2,7 @@ import sys
 
 from cStringIO import StringIO
 
-import unittest
+import redgreenunittest as unittest
 
 
 def resultFactory(*_):

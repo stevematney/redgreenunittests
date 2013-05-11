@@ -1,4 +1,4 @@
-import unittest
+import redgreenunittest as unittest
 
 from cStringIO import StringIO
 import pickle
