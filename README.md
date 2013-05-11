@@ -1,7 +1,7 @@
 WHAT?!
 ===
 
-This is literally an exact clone of unittest, but with colors.
+This is literally an exact clone of unittest (from Python 2.7), but with colors.
 
 HOW?!
 ===
@@ -14,6 +14,10 @@ INSTALLATION?!
 Just put the `redgreenunittest` folder in this project in a Python project. Or in your virtualenv site-packages folder. Just shove it right in there and reference it by importing it. Like this:
 
     import redgreenunittest
+
+If you do want to use it as a direct replacement for unittest without doing any extra work, you can just import like this:
+
+    import redgreenunittest as unittest
 
 BUT WHAT ABOUT DJANGO?!
 ===
