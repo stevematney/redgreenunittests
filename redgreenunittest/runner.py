@@ -3,6 +3,10 @@
 import sys
 import time
 
+from pygments import highlight
+from pygments.lexers import PythonTracebackLexer
+from pygments.formatters import TerminalFormatter
+
 from . import result
 from .signals import registerResult
 
@@ -127,6 +131,10 @@ class TextTestResult(result.TestResult):
             self.stream.writeln(self.separator2)
             self.stream.writeln("%s" % err)
             self.stream.writeln(self.ENDC)
+
+    def _exc_info_to_string(self, err, test):
+        code = super(TextTestResult, self)._exc_info_to_string(err, test)
+        return highlight(code, PythonTracebackLexer(), TerminalFormatter())
 
 
 class TextTestRunner(object):
