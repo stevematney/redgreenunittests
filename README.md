@@ -11,7 +11,11 @@ You literally use it in the exact same way as [unittest](http://docs.python.org/
 INSTALLATION?!
 ===
 
-Just put the `redgreenunittest` folder in this project in a Python project. Or in your virtualenv site-packages folder. Just shove it right in there and reference it by importing it. Like this:
+Because we're using `pygments` to add syntax highlighting (when your tests fail), you'll need to install that using pip:
+
+    pip install pygments
+
+After that, just put the `redgreenunittest` folder in this project in a Python project. Or in your virtualenv site-packages folder. Just shove it right in there and reference it by importing it. Like this:
 
     import redgreenunittest
 
