@@ -76,14 +76,14 @@ class TextTestResult(result.TestResult):
     def addSuccess(self, test):
         super(TextTestResult, self).addSuccess(test)
         if self.showAll:
-            self.writeline(self.OKGREEN, "ok")
+            self.writeLine(self.OKGREEN, "ok")
         elif self.dots:
             self.write(self.OKGREEN, '.')
 
     def addError(self, test, err):
         super(TextTestResult, self).addError(test, err)
         if self.showAll:
-            self.writeline(self.WARNING, "ERROR")
+            self.writeLine(self.WARNING, "ERROR")
         elif self.dots:
             self.write(self.WARNING, 'E')
 
@@ -91,7 +91,7 @@ class TextTestResult(result.TestResult):
         super(TextTestResult, self).addFailure(test, err)
         self.stream.write(self.FAIL)
         if self.showAll:
-            self.writeline(self.FAIL, "FAIL")
+            self.writeLine(self.FAIL, "FAIL")
         elif self.dots:
             self.write(self.FAIL, 'F')
 
@@ -106,14 +106,14 @@ class TextTestResult(result.TestResult):
     def addExpectedFailure(self, test, err):
         super(TextTestResult, self).addExpectedFailure(test, err)
         if self.showAll:
-            self.writeline(self.OKGREEN, "expected failure")
+            self.writeLine(self.OKGREEN, "expected failure")
         elif self.dots:
             self.write(self.OKGREEN, "x")
 
     def addUnexpectedSuccess(self, test):
         super(TextTestResult, self).addUnexpectedSuccess(test)
         if self.showAll:
-            self.writeline(self.FAIL, "unexpected success")
+            self.writeLine(self.FAIL, "unexpected success")
         elif self.dots:
             self.write(self.FAIL, "u")
 
