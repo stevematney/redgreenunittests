@@ -30,9 +30,16 @@ I assume you mean the Python framework. (Not that movie.) Remember when I said, 
 
 If you want to use this as your test runner, and you're already using unittest, you can literally drop this line of code into your settings.py file, and it will straight up work if you followed those installation instructions. In fact you could even skip the referencing step since Python is smart.
 
-    TEST_RUNNER="redgreenunittest.django.simple.RedGreenTestSuiteRunner"
+    TEST_RUNNER="redgreenunittest.django.runner.RedGreenDiscoverRunner"
 
 Go ahead. Run your tests. Colors. It's like we live in the future.
+
+DJANGO < 1.6
+==
+
+Running a Django version pre-1.6? Then you'll want the simple runner.
+
+    TEST_RUNNER="redgreenunittest.django.simple.RedGreenTestSuiteRunner"
 
 
 CAVEATS?!
