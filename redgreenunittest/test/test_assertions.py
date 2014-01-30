@@ -70,7 +70,7 @@ class Test_Assertions(redgreenunittest.TestCase):
         with self.assertRaises(KeyError) as cm:
             try:
                 raise KeyError
-            except Exception, e:
+            except Exception as e:
                 raise
         self.assertIs(cm.exception, e)
 
@@ -95,7 +95,7 @@ class Test_Assertions(redgreenunittest.TestCase):
         self.assertNotRegexpMatches('Ala ma kota', r'r+')
         try:
             self.assertNotRegexpMatches('Ala ma kota', r'k.t', 'Message')
-        except self.failureException, e:
+        except self.failureException as e:
             self.assertIn("'kot'", e.args[0])
             self.assertIn('Message', e.args[0])
         else:
