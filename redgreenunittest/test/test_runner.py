@@ -1,6 +1,10 @@
 import redgreenunittest as unittest
 
-from cStringIO import StringIO
+try:
+    from io import StringIO
+except ImportError:
+    from cStringIO import StringIO
+
 import pickle
 
 from .support import LoggingResult, ResultWithNoStartTestRunStopTestRun

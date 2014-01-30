@@ -2,7 +2,10 @@ from __future__ import print_function
 
 import sys
 import textwrap
-from StringIO import StringIO
+try:
+    from io import StringIO
+except ImportError:
+    from cStringIO import StringIO
 
 import traceback
 import redgreenunittest as unittest

@@ -1,6 +1,9 @@
 import sys
 
-from cStringIO import StringIO
+try:
+    from io import StringIO
+except ImportError:
+    from cStringIO import StringIO
 
 import redgreenunittest as unittest
 
