@@ -18,6 +18,8 @@ __unittest = True
 # from '.py', '.pyc' *and* '.pyo'
 VALID_MODULE_NAME = re.compile(r'[_a-z]\w*\.py$', re.IGNORECASE)
 
+def cmp(a, b):
+    return (a > b) - (a < b)
 
 def _make_failed_import_test(name, suiteClass):
     message = 'Failed to import test module: %s\n%s' % (name, traceback.format_exc())
