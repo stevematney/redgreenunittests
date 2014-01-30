@@ -201,7 +201,10 @@ class TestCase(object):
         self.addTypeEqualityFunc(tuple, self.assertTupleEqual)
         self.addTypeEqualityFunc(set, self.assertSetEqual)
         self.addTypeEqualityFunc(frozenset, self.assertSetEqual)
-        self.addTypeEqualityFunc(unicode, self.assertMultiLineEqual)
+        try:
+            self.addTypeEqualityFunc(unicode, self.assertMultiLineEqual) # Python 2
+        except NameError:
+            self.addTypeEqualityFunc(str, self.assertMultiLineEqual) # Python 3
 
     def addTypeEqualityFunc(self, typeobj, function):
         """Add a type specific assertEqual style function to compare a type.
