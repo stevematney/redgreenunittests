@@ -3,7 +3,6 @@ from __future__ import print_function
 import sys
 import textwrap
 from StringIO import StringIO
-from test import test_support
 
 import traceback
 import redgreenunittest as unittest

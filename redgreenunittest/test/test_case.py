@@ -4,7 +4,6 @@ import re
 import sys
 
 from copy import deepcopy
-from test import test_support
 
 import redgreenunittest as unittest
 
