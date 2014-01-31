@@ -12,7 +12,7 @@ class TestHashing(object):
                     self.fail("%r and %r do not hash equal" % (obj_1, obj_2))
             except KeyboardInterrupt:
                 raise
-            except Exception, e:
+            except Exception as e:
                 self.fail("Problem hashing %r and %r: %s" % (obj_1, obj_2, e))
 
         for obj_1, obj_2 in self.ne_pairs:
@@ -22,7 +22,7 @@ class TestHashing(object):
                               (obj_1, obj_2))
             except KeyboardInterrupt:
                 raise
-            except Exception, e:
+            except Exception as e:
                 self.fail("Problem hashing %s and %s: %s" % (obj_1, obj_2, e))
 
 

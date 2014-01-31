@@ -4,7 +4,6 @@ import re
 import sys
 
 from copy import deepcopy
-from test import test_support
 
 import redgreenunittest as unittest
 
@@ -919,7 +918,7 @@ test case
             try:
                 self.assertMultiLineEqual(type_changer(sample_text),
                                           type_changer(revised_sample_text))
-            except self.failureException, e:
+            except self.failureException as e:
                 # need to remove the first line of the error message
                 error = str(e).encode('utf8').split('\n', 1)[1]
 

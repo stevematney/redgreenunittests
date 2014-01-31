@@ -4,7 +4,10 @@ import os
 import sys
 import traceback
 
-from StringIO import StringIO
+try:
+    from io import StringIO # python 3
+except ImportError:
+    from StringIO import StringIO # python 2
 
 from . import util
 from functools import wraps

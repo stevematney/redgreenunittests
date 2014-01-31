@@ -201,7 +201,10 @@ class TestCase(object):
         self.addTypeEqualityFunc(tuple, self.assertTupleEqual)
         self.addTypeEqualityFunc(set, self.assertSetEqual)
         self.addTypeEqualityFunc(frozenset, self.assertSetEqual)
-        self.addTypeEqualityFunc(unicode, self.assertMultiLineEqual)
+        try:
+            self.addTypeEqualityFunc(unicode, self.assertMultiLineEqual) # Python 2
+        except NameError:
+            self.addTypeEqualityFunc(str, self.assertMultiLineEqual) # Python 3
 
     def addTypeEqualityFunc(self, typeobj, function):
         """Add a type specific assertEqual style function to compare a type.
@@ -763,16 +766,16 @@ class TestCase(object):
         """
         try:
             difference1 = set1.difference(set2)
-        except TypeError, e:
+        except TypeError as e:
             self.fail('invalid type when attempting set difference: %s' % e)
-        except AttributeError, e:
+        except AttributeError as e:
             self.fail('first argument does not support set difference: %s' % e)
 
         try:
             difference2 = set2.difference(set1)
-        except TypeError, e:
+        except TypeError as e:
             self.fail('invalid type when attempting set difference: %s' % e)
-        except AttributeError, e:
+        except AttributeError as e:
             self.fail('second argument does not support set difference: %s' % e)
 
         if not (difference1 or difference2):

@@ -1,7 +1,11 @@
+from __future__ import print_function
+
 import sys
 import textwrap
-from StringIO import StringIO
-from test import test_support
+try:
+    from io import StringIO
+except ImportError:
+    from cStringIO import StringIO
 
 import traceback
 import redgreenunittest as unittest
@@ -422,8 +426,8 @@ class TestOutputBuffering(unittest.TestCase):
         result._original_stdout = StringIO()
         result._original_stderr = StringIO()
 
-        print 'foo'
-        print >> sys.stderr, 'bar'
+        print('foo')
+        #print >> sys.stderr, 'bar'
 
         self.assertEqual(out_stream.getvalue(), 'foo\n')
         self.assertEqual(err_stream.getvalue(), 'bar\n')

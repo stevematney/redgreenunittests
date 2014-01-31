@@ -18,6 +18,8 @@ __unittest = True
 # from '.py', '.pyc' *and* '.pyo'
 VALID_MODULE_NAME = re.compile(r'[_a-z]\w*\.py$', re.IGNORECASE)
 
+def cmp(a, b):
+    return (a > b) - (a < b)
 
 def _make_failed_import_test(name, suiteClass):
     message = 'Failed to import test module: %s\n%s' % (name, traceback.format_exc())
@@ -69,7 +71,7 @@ class TestLoader(object):
         if use_load_tests and load_tests is not None:
             try:
                 return load_tests(self, tests, None)
-            except Exception, e:
+            except Exception as e:
                 return _make_failed_load_tests(module.__name__, e,
                                                self.suiteClass)
         return tests
@@ -287,7 +289,7 @@ class TestLoader(object):
                 else:
                     try:
                         yield load_tests(self, tests, pattern)
-                    except Exception, e:
+                    except Exception as e:
                         yield _make_failed_load_tests(package.__name__, e,
                                                       self.suiteClass)
 
