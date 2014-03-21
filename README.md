@@ -1,7 +1,7 @@
 WHAT?!
 ===
 
-This is literally an exact clone of unittest (from Python 2.7), but with colors.
+This is literally an exact clone of unittest (from Python 2.7), but with colors. (Now also compatible with Python 3!)
 
 HOW?!
 ===
