@@ -1,6 +1,8 @@
 WHAT?!
 ===
 
+[![Join the chat at https://gitter.im/stevematney/redgreenunittests](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/stevematney/redgreenunittests?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is literally an exact clone of unittest (from Python 2.7), but with colors.
 (Now also compatible with Python 3!)
 
