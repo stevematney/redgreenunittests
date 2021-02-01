@@ -7,6 +7,7 @@ import difflib
 import pprint
 import re
 import warnings
+import six
 
 from . import result
 from .util import (
@@ -121,7 +122,7 @@ class _AssertRaisesContext(object):
             return True
 
         expected_regexp = self.expected_regexp
-        if isinstance(expected_regexp, basestring):
+        if isinstance(expected_regexp, six.string_types):
             expected_regexp = re.compile(expected_regexp)
         if not expected_regexp.search(str(exc_value)):
             raise self.failureException('"%s" does not match "%s"' %
@@ -901,9 +902,9 @@ class TestCase(object):
 
     def assertMultiLineEqual(self, first, second, msg=None):
         """Assert that two multi-line strings are equal."""
-        self.assertIsInstance(first, basestring,
+        self.assertIsInstance(first, six.string_types,
                 'First argument is not a string')
-        self.assertIsInstance(second, basestring,
+        self.assertIsInstance(second, six.string_types,
                 'Second argument is not a string')
 
         if first != second:
@@ -991,7 +992,7 @@ class TestCase(object):
 
     def assertRegexpMatches(self, text, expected_regexp, msg=None):
         """Fail the test unless the text matches the regular expression."""
-        if isinstance(expected_regexp, basestring):
+        if isinstance(expected_regexp, six.string_types):
             expected_regexp = re.compile(expected_regexp)
         if not expected_regexp.search(text):
             msg = msg or "Regexp didn't match"
@@ -1000,7 +1001,7 @@ class TestCase(object):
 
     def assertNotRegexpMatches(self, text, unexpected_regexp, msg=None):
         """Fail the test if the text matches the regular expression."""
-        if isinstance(unexpected_regexp, basestring):
+        if isinstance(unexpected_regexp, six.string_types):
             unexpected_regexp = re.compile(unexpected_regexp)
         match = unexpected_regexp.search(text)
         if match:

@@ -1,4 +1,5 @@
 import redgreenunittest as unittest
+import six
 
 from .support import LoggingResult
 
@@ -124,7 +125,7 @@ class Test_FunctionTestCase(unittest.TestCase):
     def test_id(self):
         test = unittest.FunctionTestCase(lambda: None)
 
-        self.assertIsInstance(test.id(), basestring)
+        self.assertIsInstance(test.id(), six.string_types)
 
     # "Returns a one-line description of the test, or None if no description
     # has been provided. The default implementation of this method returns
