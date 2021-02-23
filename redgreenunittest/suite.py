@@ -1,6 +1,7 @@
 """TestSuite"""
 
 import sys
+import six
 
 from . import case
 from . import util
@@ -55,7 +56,7 @@ class BaseTestSuite(object):
 
     def addTests(self, tests):
         try:
-            if isinstance(tests, basestring): # Python 2
+            if isinstance(tests, six.string_types): # Python 2
                 raise TypeError("tests must be an iterable of tests, not a string")
         except NameError:
             if isinstance(tests, str): # Python 3
